@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0b0f17;
+    --bg-card: #111827;
+    --bg-card-hover: #1a2236;
+    --border-color: #1a2236;
+    --border-subtle: #141d2e;
+    --accent-emerald: #10b981;
+    --accent-rose: #ef4444;
+    --accent-indigo: #6366f1;
+    --accent-gold: #f59e0b;
+    --accent-blue: #3b82f6;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .heading-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0b0f17; }
+::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #374151; }
+
+/* Card surface – no border, flat dark bg */
+.card {
+  background: #111827;
+  border-radius: 1rem;
+}
+
+.card-sm {
+  background: #111827;
+  border-radius: 0.75rem;
+}
+
+/* Subtle glass panel (header, sidebar only) */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Colored accent cards */
+.card-gold  { background: rgba(245, 158, 11, 0.06); }
+.card-emerald { background: rgba(16, 185, 129, 0.06); }
+.card-indigo { background: rgba(99, 102, 241, 0.06); }
+
+/* Micro-animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Tabular numbers */
+.number-font {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  font-family: 'Outfit', monospace;
+}
