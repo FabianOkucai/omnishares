@@ -1,0 +1,16 @@
+# Exclude Python backend from Vercel deployment
+# The frontend is fully self-contained with mock data
+backend/
+*.py
+*.pyc
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+*.txt
+
+# Development artifacts
+assets/
+dist/
+.git/
+node_modules/
